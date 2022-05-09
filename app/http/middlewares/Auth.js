@@ -3,6 +3,7 @@ const config = require('config')
 
 module.exports = (req, res, next) => {
     const token = req.header('Authorization')
+
     if (!token) {
         const err = new Error('برای دسترسی با این بخشن نیاز به حساب کاربری است')
         err.statusCode = 401

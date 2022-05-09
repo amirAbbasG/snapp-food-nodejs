@@ -23,7 +23,7 @@ class FoodController {
         const foodDetails = await FoodModel.findOne({_id: (req.params.foodId)})
             .populate({
                 path: 'comments'
-            }).select("-userNumber -userPassword")
+            })
         res.status(200).send({foodDetails, message: true})
     }
 

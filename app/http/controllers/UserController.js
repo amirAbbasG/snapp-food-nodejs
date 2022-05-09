@@ -119,7 +119,6 @@ class UserController {
 
     //region get number from user chek if is in db send login action if its not sent code for verify
     async checkNumber(req, res) {
-        console.log('requested')
         const {error} = numberValidator(req.body)
         if (error) {
             const err = new Error(error.message)

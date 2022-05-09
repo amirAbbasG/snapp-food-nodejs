@@ -14,7 +14,6 @@ const sendCode = (userNumber, callback) => {
     myCache.set(userNumber, number)
     api.Send({
             message: ` کد فعال سازی : ${number}`,
-        // تو صفحه حساب کاربری شماره پیشفرض رایگان رو انتخاب کن و ان را در sender جایگذاری کن
             sender: "10008663",
             receptor: userNumber
         },

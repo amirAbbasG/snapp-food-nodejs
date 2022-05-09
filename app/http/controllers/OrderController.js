@@ -6,6 +6,8 @@ const UserModel = require("../../models/User");
 const DiscountModel = require("../../models/Discount");
 const PaymentModel = require("../../models/Payment");
 const successPayment = require("../../http/hellpers/paymentResultMessage");
+const ZarinpalCheckout = require('zarinpal-checkout')
+zarinpal = ZarinpalCheckout.create('00000000-0000-0000-0000-000000000000', true)
 
 
 
