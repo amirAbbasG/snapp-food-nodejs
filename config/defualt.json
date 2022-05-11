@@ -1,3 +1,5 @@
 {
-  "jwtKey": "snapFoodJwtPrivateKey"
+  "jwtKey": "snapFoodJwtPrivateKey",
+  "localDbUrl": "mongodb://127.0.0.1:27017/snapFood",
+  "serverDbUrl": "mongodb://root:ELLmbjMYQgNE37my@services.irn1.chabokan.net:41977/SnappFood?authSource=admin"
 }

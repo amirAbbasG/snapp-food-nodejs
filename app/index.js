@@ -4,6 +4,7 @@ require('winston-mongodb')
 const winston = require('winston')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const config = require('config')
 
 const {errorHandler} = require('./http/middlewares/ErrorHandler')
 const api = require('./routes')
@@ -21,7 +22,7 @@ class App {
     setupErrorHandlers(){
         winston.add( new winston.transports.File({filename: 'error_logs.log'}))
         winston.add(new winston.transports.MongoDB({
-            db: 'mongodb://127.0.0.1:27017/snapFood',
+            db: config.get("serverDbUrl"),
             level: 'error'
         }))
         process.on('unhandledRejection', (err) => {
@@ -35,10 +36,9 @@ class App {
     }
 
     setupMongoDB(){
-        mongoose.connect('mongodb://127.0.0.1:27017/snapFood',{
+        mongoose.connect( config.get("serverDbUrl"),{
             useUnifiedTopology: true,
             useNewUrlParser: true,
-
         })
 
         mongoose.connection.on('connected', () => {
